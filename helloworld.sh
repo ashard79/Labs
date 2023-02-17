@@ -8,7 +8,7 @@
 
 # Main
 echo hi im oz 1
-
+echo i am working perfectly
 pwd
 whoami
 # End
