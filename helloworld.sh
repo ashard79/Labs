@@ -12,6 +12,13 @@ echo "the stores at the mall are really really tall"
 echo "stores at the plaza are really really small"
 echo 5432
 
+varname=lets go
+varname2=please stop
+
+echo $varname
+
+echo $varname2
+
 print_somthing() { osaremehabel@osaremehs-MacBook-Pro ~ % last
 osaremehabel  ttys000                   Sat Feb 18 17:09   still logged in
 osaremehabel  ttys000                   Sat Feb 18 16:11 - 16:11  (00:00)
@@ -27,6 +34,7 @@ reboot    ~                         Tue Feb 14 20:27
 osaremehabel  console                   Sun Feb 12 08:46 - crash (2+11:40
 
 }
+
 
 
 # End
