@@ -7,8 +7,8 @@
 
 
 # Main 
-pear=who am i
-history{} { 
+pear= who am i
+history() { 
     $pear                
 
 }
