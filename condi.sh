@@ -9,7 +9,7 @@
 
 while true ; do
 
-echo "1) File 2)Directory"
+echo "1) File 2) Directory"
 read Type
 echo "Enter file/directory name"
 read file_or_dir
