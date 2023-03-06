@@ -8,35 +8,47 @@
 #          Kill the process with that PID
 #          Use a loop in your script
 
-input="0"
 
-while [[ $input != "1" ]]; do
-    echo "Please choose one of the following"
-    echo "1) continue"
-    echo "2) Dont continue"
-    echo "Enter the number"
-    read input
-done
-
-ps
-
-kill $pid
-
+#!/bin/bash
 
 # Main
 
+while true; do
+  
+  echo "Running processes:"
+  ps aux
 
+  read -p "Enter the PID to kill (or 'q' to quit): " pid
 
-# Write a script that displays running processes, asks the user for a PID, then kills the process with that PID.
+  if [[ "$pid" == "q" ]]; then
+    break
+  fi
 
+  if kill "$pid" >/dev/null 2>&1; then
+    echo "Process with PID $pid has been killed."
+  else
+    echo "Failed to kill process with PID $pid."
+  fi
 
-
-
-
-# This loop will facilitate the menu system of your script, so that it can prompt the user to choose an option.
-
-
-
-
+done
 
 # End
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
