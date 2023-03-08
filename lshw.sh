@@ -4,61 +4,31 @@
 # Purpose: Uses lshw to display system information to the screen about the following components:
 # Name of the computer, CPU, Ram, Display Adapter, Network Adapter, 
 
+#Main
+
 
 echo "***Name of CPU"
 whoami
 echo ""
-echo ""
 
 echo "***CPU"
-sudo $(lshw | grep -B5 "CPU")
-echo ""
-echo ""
+lshw | grep -A6 "*-cpu"
+echo""
 
 echo "***Ram"
-sudo lshw -C memory
-echo ""
-echo ""
-
+sudo lshw -c memory | grep -A3 -i "*-memory"
+echo""
 
 echo "***Display Adapter"
-sudo lshw -C display
-echo ""
+sudo lshw -C display | grep -v "logical name" | grep -v "version"
 echo ""
 
 echo "***Network Adapter"
-sudo lshw -C network
-echo ""
-
-echo $(lshw | grep )
+sudo lshw -C network 
 
 
+#End
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Main
-
-
-
-
-
-
-
-
-
-# End
