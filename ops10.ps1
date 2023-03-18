@@ -23,10 +23,17 @@ for ($x=1; $x -le 10; $x++) {
 Start-Process iexplore.exe -ArgumentList "https://owasp.org/www-project-top-ten"
 }
 
+Start-Sleep -Seconds 5
+
 # Close all Internet Explorer windows
-Stop-Process -name "explorer.exe"
+Stop-Process -Name msedge -Force
 
+# Kill a process by its Process Identification Number. Choose a process whose termination won’t destabilize the system, such as Internet Explorer or MS Edge.
+Get-Process
 
+Stop-Process -Id 9624
+
+#End
 
 
 
