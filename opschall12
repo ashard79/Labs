@@ -22,27 +22,4 @@ Start-Sleep -Seconds 5
 # Remove the network_report.txt when you are finished searching it.
 rm network_report.txt
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 # End
