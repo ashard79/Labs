@@ -4,22 +4,33 @@
 # Author: Osaremeh Abel
 # Date of latest revision: 03/24/23
 # Purpose: 
+# one variable and one function 
+# Create a local file called network_report.txt that holds the contents of an ipconfig /all command.
+# Use Select-String to search network_report.txt and return only the IP version 4 address.
+# Remove the network_report.txt when you are finished searching it.
+
 
 # Main
 
-#one variable and one function 
-$chips = "Network file created"
-echo = $chips
+$toast = "C:\Users\admin\Desktop\network_report.txt"
 
-# Create a local file called network_report.txt that holds the contents of an ipconfig /all command.
-ipconfig /all > network_report.txt
+Function findip {
+    ipconfig /all > $toast
+    Select-String -Path $toast -Pattern "IPv4"
+}
 
-# Use Select-String to search network_report.txt and return only the IP version 4 address.
-Select-String -Path C:\Users\admin\Desktop\network_report.txt -Pattern "IPv4"
+findip
 
 Start-Sleep -Seconds 5
 
-# Remove the network_report.txt when you are finished searching it.
 rm network_report.txt
 
+
+
+
 # End
+
+
+
+
+
