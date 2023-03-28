@@ -1,0 +1,49 @@
+#!/bin/bash
+
+# Script: ops 201 class 13 ops Challenge
+# Author: Osaremeh Abel
+# Date of latest revision: 03/27/23
+# Purpose: Install whois on your Ubuntu VM
+# Take a user input string. Presumably the string is a domain name such as Google.com.
+# Run whois against a user input string 
+# Run dig against the user input string.
+# Run host against the user input string.
+# Run nslookup against the user input string.
+
+rocks=
+
+# Main
+
+function mainman {
+
+    echo "Enter a domain name:"
+    read domain_name
+    echo "=== Information about $domain_name ==="
+    whois $domain_name
+    
+    
+    echo "DIG Information:"
+    dig $domain_name
+    
+    
+    echo "HOST Information:"
+    host $domain_name
+    
+    
+    echo "NSLOOKUP Information:"
+    nslookup $domain_name
+    
+
+    nano info.txt
+
+}
+
+mainman
+    
+
+
+
+
+
+
+
