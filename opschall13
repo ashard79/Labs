@@ -15,26 +15,25 @@ rocks="domain_name"
 # Main
 
 function mainman {
-
     echo "Enter a Domain name:"
-    read $rocks
-    echo "=== Information about $domain_name ==="
-    whois $domain_name > results.txt
+    read rocks
+    echo "=== Information about $rocks ==="
+    
+    whois $rocks >> results.txt
     
     echo "DIG Information:"
-    dig $domain_name > results.txt
+    dig $rocks >> results.txt
     
     echo "HOST Information:"
-    host $domain_name > results.txt
+    host $rocks >> results.txt
     
     echo "NSLOOKUP Information:"
-    nslookup $domain_name > results.txt
+    nslookup $rocks >> results.txt
 
 }
 
 mainman
     
-nano results.txt
 
 
 
