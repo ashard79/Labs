@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+
 # Script: ops 301 class 08 ops Challenge
 # Author: Osaremeh Abel
 # Date of latest revision: 05/18/23
@@ -9,6 +10,9 @@
 # Print the sixth through tenth element of the list.
 # Change the value of the seventh element to “onion”.
 # Create one tuple. Create one set. Create one dictionary.
+# remove()
+# reverse()
+# sort()
 # append()
 # clear()
 # copy()
@@ -16,14 +20,11 @@
 # extend()
 # index()
 # insert()
-# pop()
-# remove()
-# reverse()
-# sort()
 
 
 
 # Main
+
 import time
 
 # Created tuple
@@ -69,3 +70,4 @@ my_fruits.count(2)
 
 
 
+z
