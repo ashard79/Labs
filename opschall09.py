@@ -31,6 +31,10 @@ asisst = 7
 # if statement
 if mvp == "Best Player":
     print("Joel Embiid is the MVP")
+    
+elif rebounds <= 10:
+    print("great job on the boards")
+
 
 # else to execute when both if and elif are not met.
 if points < 15:
@@ -41,22 +45,6 @@ elif points >= 30:
 
 else:
     print("You're in a good sweet spot")   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 # End
