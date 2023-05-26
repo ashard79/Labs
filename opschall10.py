@@ -28,11 +28,14 @@ with open(football_path, "a") as football:
 # Print first Line
 with open(football_path, "r") as football:
   
-  for line in notebook:
+  for line in football:
     print("Line: ", line.strip())
 
 
+os.remove(football_path)    
 
+
+# End
    
 
 
