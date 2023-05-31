@@ -36,6 +36,38 @@ cpu_times = psutil.cpu_times()
 idle_time = cpu_times.idle
 print(f"Time when system was idle: {idle_time} seconds")
 
+import time
+
+def measure_interrupt_time():
+    start_time = time.perf_counter()
+    
+# code that generates hardware interrupts
+    
+    end_time = time.perf_counter()
+    interrupt_time = end_time - start_time
+    
+    print("Time spent on servicing hardware interrupts:", interrupt_time, "seconds")
+
+# Calling function to measure interrupt time
+measure_interrupt_time()
+
+import time
+
+def measure_interrupt_time():
+    start_time = time.perf_counter()
+    
+    # Code after the software interrupt
+
+    end_time = time.perf_counter()
+    interrupt_time = end_time - start_time
+
+    print("Time spent on servicing software interrupts:", interrupt_time, "seconds")
+
+# Calling the function to measure interrupt time
+measure_interrupt_time()
+
+
+
 
 
 
