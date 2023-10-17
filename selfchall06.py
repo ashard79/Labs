@@ -1,10 +1,10 @@
 #!/usr/bin/python3
 
-# Script: ops 401 class 06 ops Challenge
+# Script: ops 401 class 06/07 ops Challenge
 # Author: Osaremeh Abel
-# Date of latest revision: 10/04/23
+# Date of latest revision: 10/17/23
 # Purpose: In Python, create a script that utilizes the cryptography library to:
-# 
+
 # Prompt the user to select a mode:
 # Encrypt a file (mode 1)
 # Decrypt a file (mode 2)
@@ -23,12 +23,15 @@
 # Decrypt the string if in mode 4.
 # Print the cleartext to the screen.
 
+# Recursively encrypt a single folder and all its contents.
+# Recursively decrypt a single folder that was encrypted by this tool.
 
 # Main
 
 # importing from cryptography library
 from cryptography.fernet import Fernet
 import os
+import random
 
 # Generated a key for encrypt/decrypt
 key = Fernet.generate_key()
@@ -89,5 +92,43 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+# To encrypt Folder
+  def encrypt_random_folder(directory, key):
+    folders = [f.path for f in os.scandir(directory) if f.is_dir()]
+    if not folders:
+        print("No folders found in the specified directory.")
+        return
+
+    random_folder = random.choice(folders)
+    print(f"Selected folder for encryption: {random_folder}")
+    encrypt_directory(random_folder, key)
+
+def encrypt_directory(directory, key):
+    for foldername, subfolders, filenames in os.walk(directory):
+        for filename in filenames:
+            file_path = os.path.join(foldername, filename)
+            encrypt_file(file_path, key)
+            print(f'Encrypted: {file_path}')
+
+ # To decrypt the folder
+def decrypt_file(file_path, key):
+    cipher_suite = Fernet(key)
+    with open(file_path, 'rb') as file:
+        encrypted_data = file.read()
+    decrypted_data = cipher_suite.decrypt(encrypted_data)
+    with open(file_path, 'wb') as file:
+        file.write(decrypted_data)
+
+def decrypt_directory(directory, key):
+    for foldername, subfolders, filenames in os.walk(directory):
+        for filename in filenames:
+            file_path = os.path.join(foldername, filename)
+            decrypt_file(file_path, key)
+            print(f'Decrypted: {file_path}')
+
+with open('encryption_key.key', 'rb') as key_file:
+        key = key_file.read()
+  
 
 #end
